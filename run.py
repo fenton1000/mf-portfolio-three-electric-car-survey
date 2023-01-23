@@ -37,8 +37,10 @@ def run_survey():
     """
     questions_worksheet = SHEET.worksheet('questions')
     number_of_questions = len(questions_worksheet.row_values(1))
+    survey_welcome_choices(number_of_questions)
     ind = 1
     responses = []
+
     while ind <= number_of_questions:
         question = get_question(ind)
         print(f'Question {ind}: {question[1]}\n')
@@ -55,6 +57,28 @@ def run_survey():
         responses.append(response)
 
     return responses
+
+
+def survey_welcome_choices(num):
+    """
+    Writes the welcome message for the survey option
+    and presents the user with options to continue or exit.
+    """
+    print('\n You have chosen option 1 Complete the Survey!\n')
+    print('Thank you for opting to take part in this survey.')
+    print("We hope to gain insight into people's current")
+    print('attitudes towards electric cars.')
+    print(f'The survey consists of {num} questions')
+    print('with multiple choice answers.')
+    print('For each question please enter the number')
+    print('of the one answer that best reflects your view.\n')
+    print('Do you wish to continue?')
+    choice = input('Please enter Y for Yes or N for No here: Y/N')
+
+    if choice == 'N':
+        print('Thank you for your interest!')
+        print('You have exited the program!')
+        raise SystemExit()
 
 
 def get_question(ind):
