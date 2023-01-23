@@ -13,6 +13,20 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('electric_car_survey')
 
 
+def welcome_page_choices():
+    """
+    Writes the welcome message and presents the user's opening options.
+    Returns the chosen option.
+    """
+    print('Welcome to the Electric Car Survey!\n')
+    print('Please select from the following options:\n')
+    print('1. Complete the Survey\n')
+    print('2. View Summary of Survey Analysis\n')
+    choice = input('Please enter the number for your chosen option here:')
+
+    return choice
+
+
 def run_survey():
     """
     Runs the survey part of the application.
@@ -36,7 +50,7 @@ def run_survey():
             answer_number = answer_index - 1
             print(f'Answer {answer_number}: {question[answer_index]}\n')
             answer_index += 1
-        
+
         response = input('Please enter the number for your answer:')
         responses.append(response)
 
@@ -62,6 +76,16 @@ def save_responses(responses):
     responses_worksheet.append_row(responses)
 
 
-responses = run_survey()
-save_responses(responses)
+def main():
+    """
+    Runs the application
+    """
+    choice = welcome_page_choices()
+    if choice == '1':
+        responses = run_survey()
+        save_responses(responses)
+    else:
+        print('Not a valid entry. Option does not currently exist')
 
+
+main()
