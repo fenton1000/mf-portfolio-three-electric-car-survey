@@ -176,6 +176,50 @@ def add_data_to_stats_worksheet(data, col):
         ind += 1
 
 
+def print_survey_analysis():
+    """
+    Prints the most recent survey analysis to screen
+    """
+    print('Retrieving survey analysis....\n')
+    number_of_questions = get_number_of_questions()
+    print('When asked the following questions:\n')
+    ind = 1
+    while ind <= number_of_questions:
+        question = get_question(ind)
+        stats = get_stats(ind)
+        display_question_format = question[1].split('#')
+        last_index = len(display_question_format) - 1
+        part = 0
+        print(f'Question {ind}:')
+        while part <= last_index:
+            print(display_question_format[part])
+            part += 1
+        
+        print(' \n')
+        ind += 1
+
+        final_answer_index = len(question) - 1
+        answer_index = 2
+        stats_index = 0
+
+        while answer_index <= final_answer_index:
+            answer_number = answer_index - 1
+            print(f'{stats[stats_index]}% of people replied:')
+            print(f'Answer {answer_number}: {question[answer_index]}\n')
+            answer_index += 1
+            stats_index += 1
+
+
+def get_stats(ind):
+    """
+    Imports the required survey stats from the stats worksheet
+    """
+    stats_worksheet = SHEET.worksheet('stats')
+    stats = stats_worksheet.col_values(ind)[1:]
+
+    return stats
+
+
 def main():
     """
     Runs the application
@@ -186,7 +230,7 @@ def main():
         save_responses(responses)
         analyze_data()
     else:
-        print('Not a valid entry. Option does not currently exist')
+        print_survey_analysis()
 
 
 main()
