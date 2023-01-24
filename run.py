@@ -124,7 +124,7 @@ def analyze_data():
         question_responses = question_responses_col[1:]
         int_responses = [int(value) for value in question_responses]
         number_of_answers = len(questions_worksheet.col_values(question_num)) - 2
-        
+
         percentages = []
         answer = 1
         while answer <= number_of_answers:
@@ -135,8 +135,15 @@ def analyze_data():
             percentage = round((is_a_match/len(int_responses)) * 100, 1)
             percentages.append(percentage)
             answer+= 1
-        
+
+        total = sum(percentages)
+        roundby = round(100 - total, 1)
+        indmax = percentages.index(max(percentages))
+        replacement_val = round(percentages[indmax] + roundby, 1)
+        percentages[indmax] = replacement_val
         print(percentages)
+        total = sum(percentages)
+        print(total)
 
         question_num += 1
 
