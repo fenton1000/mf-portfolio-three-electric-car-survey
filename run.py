@@ -35,8 +35,7 @@ def run_survey():
     question to screen.
     Returns the users responses to all questions as a list.
     """
-    questions_worksheet = SHEET.worksheet('questions')
-    number_of_questions = len(questions_worksheet.row_values(1))
+    number_of_questions = get_number_of_questions()
     survey_welcome_choices(number_of_questions)
     ind = 1
     responses = []
@@ -57,6 +56,16 @@ def run_survey():
         responses.append(response)
 
     return responses
+
+
+def get_number_of_questions():
+    """
+    Gets the number of questions in the current version of the survey.
+    """
+    questions_worksheet = SHEET.worksheet('questions')
+    number_of_questions = len(questions_worksheet.row_values(1))
+
+    return number_of_questions
 
 
 def survey_welcome_choices(num):
@@ -100,14 +109,47 @@ def save_responses(responses):
     responses_worksheet.append_row(responses)
 
 
+def analyze_data():
+    """
+    Calculates the percentage of respondants chosing each potential
+    answer for each question.
+    """
+    number_of_questions = get_number_of_questions()
+    questions_worksheet = SHEET.worksheet('questions')
+    responses_worksheet = SHEET.worksheet('responses')
+    question_num = 1
+
+    while question_num <= number_of_questions:
+        question_responses_col = responses_worksheet.col_values(question_num)
+        question_responses = question_responses_col[1:]
+        int_responses = [int(value) for value in question_responses]
+        number_of_answers = len(questions_worksheet.col_values(question_num)) - 2
+        
+        percentages = []
+        answer = 1
+        while answer <= number_of_answers:
+            is_a_match = 0
+            for value in int_responses:
+                if value == answer:
+                    is_a_match += 1
+            percentage = round((is_a_match/len(int_responses)) * 100, 1)
+            percentages.append(percentage)
+            answer+= 1
+        
+        print(percentages)
+
+        question_num += 1
+
+
 def main():
     """
     Runs the application
     """
     choice = welcome_page_choices()
     if choice == '1':
-        responses = run_survey()
-        save_responses(responses)
+        # responses = run_survey()
+        # save_responses(responses)
+        analyze_data()
     else:
         print('Not a valid entry. Option does not currently exist')
 
