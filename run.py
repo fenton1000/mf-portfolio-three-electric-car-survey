@@ -42,7 +42,17 @@ def run_survey():
 
     while ind <= number_of_questions:
         question = get_question(ind)
-        print(f'Question {ind}: {question[1]}\n')
+        display_question_format = question[1].split('#')
+        last_index = len(display_question_format) - 1
+        part = 0
+
+        print(f'\nQuestion {ind}:')
+
+        while part <= last_index:
+            print(display_question_format[part])
+            part += 1
+        
+        print(' \n')
         ind += 1
         final_answer_index = len(question) - 1
         answer_index = 2
