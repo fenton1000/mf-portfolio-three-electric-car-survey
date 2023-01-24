@@ -105,6 +105,7 @@ def save_responses(responses):
     Takes the responses from a particular survey, when passed to it,
     and saves them to the responses worksheet.
     """
+    print('Saving responses...')
     responses_worksheet = SHEET.worksheet('responses')
     responses_worksheet.append_row(responses)
 
@@ -114,6 +115,7 @@ def analyze_data():
     Calculates the percentage of respondants chosing each potential
     answer for each question.
     """
+    print('Analyzing data...')
     number_of_questions = get_number_of_questions()
     questions_worksheet = SHEET.worksheet('questions')
     responses_worksheet = SHEET.worksheet('responses')
@@ -134,18 +136,34 @@ def analyze_data():
                     is_a_match += 1
             percentage = round((is_a_match/len(int_responses)) * 100, 1)
             percentages.append(percentage)
-            answer+= 1
+            answer += 1
 
         total = sum(percentages)
         roundby = round(100 - total, 1)
         indmax = percentages.index(max(percentages))
         replacement_val = round(percentages[indmax] + roundby, 1)
         percentages[indmax] = replacement_val
-        print(percentages)
-        total = sum(percentages)
-        print(total)
+        add_data_to_stats_worksheet(percentages, question_num)
 
         question_num += 1
+    
+    print('Analysis complete! Thank you!')
+
+
+def add_data_to_stats_worksheet(data, col):
+    """
+    Adds data provided in a list to the specified column
+    overwriting the previous entry.
+    """
+    stats_worksheet = SHEET.worksheet('stats')
+    row = 2
+    last_entry_row = len(data) + 1
+    ind = 0
+    
+    while row <= last_entry_row:
+        stats_worksheet.update_cell(row, col, data[ind])
+        row += 1
+        ind += 1
 
 
 def main():
@@ -154,8 +172,8 @@ def main():
     """
     choice = welcome_page_choices()
     if choice == '1':
-        # responses = run_survey()
-        # save_responses(responses)
+        responses = run_survey()
+        save_responses(responses)
         analyze_data()
     else:
         print('Not a valid entry. Option does not currently exist')
