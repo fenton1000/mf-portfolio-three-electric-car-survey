@@ -22,7 +22,7 @@ def welcome_page_choices():
     print('Please select from the following options:\n')
     print('1. Complete the Survey\n')
     print('2. View Summary of Survey Analysis\n')
-    choice = input('Please enter the number for your chosen option here:')
+    choice = input('Please enter the number for your chosen option here:\n')
 
     return choice
 
@@ -62,7 +62,7 @@ def run_survey():
             print(f'Answer {answer_number}: {question[answer_index]}\n')
             answer_index += 1
 
-        response = input('Please enter the number for your answer:')
+        response = input('Please enter the number for your answer:\n')
         responses.append(response)
 
     return responses
@@ -92,7 +92,7 @@ def survey_welcome_choices(num):
     print('For each question please enter the number')
     print('of the one answer that best reflects your view.\n')
     print('Do you wish to continue?')
-    choice = input('Please enter Y for Yes or N for No here: Y/N')
+    choice = input('Please enter Y for Yes or N for No here: Y/N\n')
 
     if choice == 'N':
         print('Thank you for your interest!')
