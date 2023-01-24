@@ -13,16 +13,42 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('electric_car_survey')
 
 
+def validate_input(value, allowed):
+    """
+    Runs the validation of data for inputs using the
+    value of the input and a list of allowed inputs
+    """
+    try:
+        x = 0
+        for item in allowed:
+            if value == item:
+                x = 1
+
+        if x != 1:
+            raise ValueError
+
+    except ValueError:
+        print('Invalid Entry!! Enter value for given options only!!')
+        return False
+
+    return True
+
+
 def welcome_page_choices():
     """
     Writes the welcome message and presents the user's opening options.
     Returns the chosen option.
     """
     print('Welcome to the Electric Car Survey!\n')
-    print('Please select from the following options:\n')
-    print('1. Complete the Survey\n')
-    print('2. View Summary of Survey Analysis\n')
-    choice = input('Please enter the number for your chosen option here:\n')
+    while True:
+        print('Please select from the following options:\n')
+        print('1. Complete the Survey')
+        print('2. View Summary of Survey Analysis\n')
+        choice = input('Enter the number for your chosen option here:\n')
+        choice_stripped = choice.strip()
+
+        if validate_input(choice_stripped, ['1', '2']):
+            break
 
     return choice
 
@@ -51,7 +77,7 @@ def run_survey():
         while part <= last_index:
             print(display_question_format[part])
             part += 1
-        
+
         print(' \n')
         ind += 1
         final_answer_index = len(question) - 1
@@ -62,7 +88,15 @@ def run_survey():
             print(f'Answer {answer_number}: {question[answer_index]}\n')
             answer_index += 1
 
-        response = input('Please enter the number for your answer:\n')
+        while True:
+            response = input('Please enter the number for your answer:\n')
+            response_stripped = response.strip()
+            allowed_nums = range(1, answer_number + 1)
+            allowed = [str(x) for x in allowed_nums]
+
+            if validate_input(response_stripped, allowed):
+                break
+
         responses.append(response)
 
     return responses
@@ -92,9 +126,20 @@ def survey_welcome_choices(num):
     print('For each question please enter the number')
     print('of the one answer that best reflects your view.\n')
     print('Do you wish to continue?')
-    choice = input('Please enter Y for Yes or N for No here: Y/N\n')
+
+    while True:
+        choice = input('Please enter Y for Yes or N for No here: Y/N\n')
+        choice_stripped = choice.strip()
+
+        if validate_input(choice_stripped, ['Y', 'y', 'N', 'n']):
+            break
 
     if choice == 'N':
+        print('Thank you for your interest!')
+        print('You have exited the program!')
+        raise SystemExit()
+
+    if choice == 'n':
         print('Thank you for your interest!')
         print('You have exited the program!')
         raise SystemExit()
@@ -135,7 +180,8 @@ def analyze_data():
         question_responses_col = responses_worksheet.col_values(question_num)
         question_responses = question_responses_col[1:]
         int_responses = [int(value) for value in question_responses]
-        number_of_answers = len(questions_worksheet.col_values(question_num)) - 2
+        questions = questions_worksheet.col_values(question_num)
+        number_of_answers = len(questions) - 2
 
         percentages = []
         answer = 1
@@ -156,7 +202,7 @@ def analyze_data():
         add_data_to_stats_worksheet(percentages, question_num)
 
         question_num += 1
-    
+
     print('Analysis complete! Thank you!')
 
 
@@ -169,7 +215,7 @@ def add_data_to_stats_worksheet(data, col):
     row = 2
     last_entry_row = len(data) + 1
     ind = 0
-    
+
     while row <= last_entry_row:
         stats_worksheet.update_cell(row, col, data[ind])
         row += 1
@@ -194,7 +240,7 @@ def print_survey_analysis():
         while part <= last_index:
             print(display_question_format[part])
             part += 1
-        
+
         print(' \n')
         ind += 1
 
