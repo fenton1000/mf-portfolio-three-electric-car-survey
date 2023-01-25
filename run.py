@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from colorama import Fore, Back, Style
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -22,7 +23,7 @@ def validate_input(value, allowed):
         if value == item:
             return True
 
-    print('\nInvalid Entry!! Enter value for given options only!!')
+    print(Fore.RED + '\nInvalid Entry!! Enter value for given options only!!')
     return False
 
 
@@ -31,9 +32,9 @@ def welcome_page_choices():
     Writes the welcome message and presents the user's opening options.
     Returns the chosen option.
     """
-    print('Welcome to the Electric Car Survey!\n')
+    print(Fore.GREEN + 'Welcome to the Electric Car Survey!\n')
     while True:
-        print('Please select from the following options:\n')
+        print(Fore.BLUE + 'Please select from the following options:\n')
         print('1. Complete the Survey')
         print('2. View Summary of Survey Analysis\n')
         choice = input('Enter the number for your chosen option here:\n')
@@ -64,7 +65,7 @@ def run_survey():
         last_index = len(display_question_format) - 1
         part = 0
 
-        print(f'\nQuestion {ind}:')
+        print(Fore.GREEN + f'\nQuestion {ind}:')
 
         while part <= last_index:
             print(display_question_format[part])
@@ -77,7 +78,7 @@ def run_survey():
 
         while answer_index <= final_answer_index:
             answer_number = answer_index - 1
-            print(f'Answer {answer_number}: {question[answer_index]}\n')
+            print(Fore.BLUE + f'Answer {answer_number}: {question[answer_index]}\n')
             answer_index += 1
 
         while True:
@@ -109,7 +110,7 @@ def survey_welcome_choices(num):
     Writes the welcome message for the survey option
     and presents the user with options to continue or exit.
     """
-    print('\n You have chosen option 1 Complete the Survey!\n')
+    print(Fore.GREEN + '\n You have chosen option 1 Complete the Survey!\n')
     print('Thank you for opting to take part in this survey.')
     print("We hope to gain insight into people's current")
     print('attitudes towards electric cars.')
@@ -127,7 +128,7 @@ def survey_welcome_choices(num):
             break
 
     if choice_stripped.upper() == 'N':
-        print('Thank you for your interest!')
+        print(Fore.RED + 'Thank you for your interest!')
         print('You have exited the program!')
         raise SystemExit()
 
@@ -147,7 +148,7 @@ def save_responses(responses):
     Takes the responses from a particular survey, when passed to it,
     and saves them to the responses worksheet.
     """
-    print('Saving responses...')
+    print(Style.RESET_ALL + 'Saving responses...')
     responses_worksheet = SHEET.worksheet('responses')
     responses_worksheet.append_row(responses)
 
@@ -157,7 +158,7 @@ def analyze_data():
     Calculates the percentage of respondants chosing each potential
     answer for each question.
     """
-    print('Analyzing data...')
+    print(Style.RESET_ALL + 'Analyzing data...')
     number_of_questions = get_number_of_questions()
     questions_worksheet = SHEET.worksheet('questions')
     responses_worksheet = SHEET.worksheet('responses')
@@ -218,9 +219,9 @@ def print_survey_analysis():
     """
     Prints the most recent survey analysis to screen
     """
-    print('Retrieving survey analysis....\n')
+    print(Style.RESET_ALL + 'Retrieving survey analysis....\n')
     number_of_questions = get_number_of_questions()
-    print('When asked the following questions:\n')
+    print(Fore.BLUE + 'When asked the following questions:\n')
     ind = 1
     while ind <= number_of_questions:
         question = get_question(ind)
@@ -228,7 +229,7 @@ def print_survey_analysis():
         display_question_format = question[1].split('#')
         last_index = len(display_question_format) - 1
         part = 0
-        print(f'Question {ind}:')
+        print(Fore.GREEN + f'Question {ind}:')
         while part <= last_index:
             print(display_question_format[part])
             part += 1
@@ -242,12 +243,12 @@ def print_survey_analysis():
 
         while answer_index <= final_answer_index:
             answer_number = answer_index - 1
-            print(f'{stats[stats_index]}% of people replied:')
-            print(f'Answer {answer_number}: {question[answer_index]}\n')
+            print(Fore.CYAN + f'{stats[stats_index]}% of people replied:')
+            print(Fore.BLUE + f'Answer {answer_number}: {question[answer_index]}\n')
             answer_index += 1
             stats_index += 1
 
-    print('Data worksheet can be viewed at:')
+    print(Style.RESET_ALL + 'Data worksheet can be viewed at:')
     print('https://docs.google.com/spreadsheets/d/')
     print('1VFA4T7ZKYnuBS6kPLoo7TUDiPYoVGaTs0z5zoFnYQh0/edit?usp=sharing')
 
