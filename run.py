@@ -1,6 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -118,10 +118,10 @@ def survey_welcome_choices(num):
     print('with multiple choice answers.')
     print('For each question please enter the number')
     print('of the one answer that best reflects your view.\n')
-    print('Do you wish to continue?')
+    print(Fore.BLUE + 'Do you wish to continue?')
 
     while True:
-        choice = input('Please enter Y for Yes or N for No here: Y/N\n')
+        choice = input(Fore.BLUE + 'Please enter Y for Yes or N for No here: Y/N\n')
         choice_stripped = choice.strip()
 
         if validate_input(choice_stripped, ['Y', 'y', 'N', 'n']):
