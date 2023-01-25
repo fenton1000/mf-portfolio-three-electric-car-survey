@@ -18,20 +18,12 @@ def validate_input(value, allowed):
     Runs the validation of data for inputs using the
     value of the input and a list of allowed inputs
     """
-    try:
-        x = 0
-        for item in allowed:
-            if value == item:
-                x = 1
+    for item in allowed:
+        if value == item:
+            return True
 
-        if x != 1:
-            raise ValueError
-
-    except ValueError:
-        print('Invalid Entry!! Enter value for given options only!!')
-        return False
-
-    return True
+    print('\nInvalid Entry!! Enter value for given options only!!')
+    return False
 
 
 def welcome_page_choices():
@@ -134,12 +126,7 @@ def survey_welcome_choices(num):
         if validate_input(choice_stripped, ['Y', 'y', 'N', 'n']):
             break
 
-    if choice == 'N':
-        print('Thank you for your interest!')
-        print('You have exited the program!')
-        raise SystemExit()
-
-    if choice == 'n':
+    if choice_stripped.upper() == 'N':
         print('Thank you for your interest!')
         print('You have exited the program!')
         raise SystemExit()
