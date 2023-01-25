@@ -192,7 +192,10 @@ def analyze_data():
 
         question_num += 1
 
-    print('Analysis complete! Thank you!')
+    print('\nAnalysis complete! Thank you!\n')
+    print('Data worksheet can be viewed at:')
+    print('https://docs.google.com/spreadsheets/d/')
+    print('1VFA4T7ZKYnuBS6kPLoo7TUDiPYoVGaTs0z5zoFnYQh0/edit?usp=sharing')
 
 
 def add_data_to_stats_worksheet(data, col):
@@ -243,6 +246,10 @@ def print_survey_analysis():
             print(f'Answer {answer_number}: {question[answer_index]}\n')
             answer_index += 1
             stats_index += 1
+
+    print('Data worksheet can be viewed at:')
+    print('https://docs.google.com/spreadsheets/d/')
+    print('1VFA4T7ZKYnuBS6kPLoo7TUDiPYoVGaTs0z5zoFnYQh0/edit?usp=sharing')
 
 
 def get_stats(ind):
