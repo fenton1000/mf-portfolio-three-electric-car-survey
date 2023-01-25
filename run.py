@@ -164,6 +164,7 @@ def analyze_data():
     question_num = 1
 
     while question_num <= number_of_questions:
+        print(f'Analysing Question {question_num} responses....')
         question_responses_col = responses_worksheet.col_values(question_num)
         question_responses = question_responses_col[1:]
         int_responses = [int(value) for value in question_responses]
@@ -186,6 +187,7 @@ def analyze_data():
         indmax = percentages.index(max(percentages))
         replacement_val = round(percentages[indmax] + roundby, 1)
         percentages[indmax] = replacement_val
+        print(f'Saving updated Question {question_num} analysis....')
         add_data_to_stats_worksheet(percentages, question_num)
 
         question_num += 1
