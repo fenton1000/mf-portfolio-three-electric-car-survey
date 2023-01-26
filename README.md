@@ -157,3 +157,51 @@ The following technologies were used in developing and deploying the website:
 * Lucidchart was used to prepare the logic flow chart.
 
 * Google Chrome was used as the main web browser both for accessing the IDE and the repository as well as to view the application on Heroku during development.
+
+## 10. Deployment
+
+   ### 10.1 via github
+
+1. The Code Institute python essentials project template was accessed on github at https://github.com/Code-Institute-Org/python-essentials-template and the Use this Template button clicked to create a project-specific repository.
+
+2. All files and documents pushed from Gitpod appear in the repository.
+
+   ### 10.2 via gitpod
+
+The site was developed in gitpod as follows:
+
+1. From the github repository created for the project the Gitpod button installed as a chrome browser extension was clicked. A Gitpod workspace was created.
+
+2. To view the ongoing development in the terminal, the command python3 run.py was entered in the IDE terminal.
+
+3. At regular appropriate intervals the latest version of the code was saved via the git add and git commit commands. Appropriate commit messages were added to control the revisions.
+
+4. The git push command was used to push all committed code and documentation to the repository for secure storage.
+
+   ### 10.3 via Heroku
+
+* The application is deployed to Heroku in the form of a web page with a mock terminal interface. This page is created by code in the python essentials template provided by Code Institute.
+
+* Prior to deployment the requirements.txt file is updated by typing the command pip3 freeze > requirements.txt to the terminal and following this all outstanding commits are pushed to the github repository.
+
+* In Heroku a new project is created to host the application.
+
+* Within this project in the settings section the Config Vars area is updated by adding the following:
+
+1. A key named CREDS is created and the full creds.json file content is copied into this as the value.
+
+2. A key named PORT is created and it is given the value 8000.
+
+* Within the project settings area two buildpacks are added in the following order:
+
+1. python
+
+2. nodejs
+
+* In the Deploy section the option to connect to github is chosen, the repository name is found and clicked on.
+
+* The option to deploy from the main branch is chosen and the project is deployed. This may take a few moments.
+
+* Once deployed a button linking to the site is provided. When clicked it leads to the deployed application and the page address can be copied and provided as a link to the site/application.
+
+* The live site/application can be accessed <a href="https://mf-pp3-electric-car-survey.herokuapp.com/" target="_blank">here</a>
