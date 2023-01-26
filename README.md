@@ -15,3 +15,67 @@ In addition to the above, it should be noted that the application has been desig
 
 1. As a visiting user, I would like to be able to complete the Electric Car Survey.
 2. As a visiting user, I would like to be able to view a summary of the survey analysis to date.
+
+## 3. Features
+
+Please note that the features section contains relevant extracts from the project wireframes. The complete wireframes are included in section 7 of this document.
+
+### 3.1 Survey Introduction
+
+* The introduction welcomes the user to the survey.
+
+* It provides the user with an option to complete the survey or to view the survey analysis.
+
+<details><summary>Fig. 3.1.1 Survey Introduction</summary>
+<img src="documents/intro.png"
+alt="wireframe of the survey introduction"></details>
+
+### 3.2 Survey Summary
+
+* The Survey Summary provides a brief outline of what the survey is about.
+
+* The participant is asked whether they wish to continue and can enter yes(Y) or no(N).
+
+<details><summary>Fig. 3.2.1 Survey Summary</summary>
+<img src="documents/survey-summary.png"
+alt="wireframe of the survey summary"></details>
+
+### 3.3  Survey Questions
+
+* Firstly a question number and question are presented. The application gets the question from the associated worksheet. The question is formatted in the worksheet using the # symbol to ensure it fits neatly in the terminal window.
+
+* The answer choices and their associated numbers are presented underneath the question.
+
+* An input line is provided to receive the user inputted answer choice.
+
+* The background worksheet format allows for one question and its associated answers per column. Row one contains a heading with the question number. Row 2 contains the question. Subsequent rows contain any number of potential answer choices to be presented to the user.
+
+* Once the participant has answered a question the application will ask the next question.
+
+* While the project currently contains 6 questions, any number of questions can be added via the worksheet, with a varying number of potential answers, without altering the code as long as the worksheet format is maintained.
+
+<details><summary>Fig. 3.3.1 Sample Survey Question</summary>
+<img src="documents/survey-question.png"
+alt="wireframe of a sample survey question"></details>
+
+### 3.4 Survey Conclusion
+
+* After the final question is answered the application saves the survey data and updates the overall survey analysis based on these most recent answers.
+
+* While this process is underway the user is presented with progress messages to keep them informed.
+
+* Once completed the user is informed and thanked for their participation.
+
+<details><summary>Fig. 3.4.1 Survey Conclusion Message</summary>
+<img src="documents/survey-conclusion.png"
+alt="wireframe of the survey conclusion"></details>
+
+### 3.5 Summary of Survey Analysis
+
+* If option 2 is selected in the Survey Introduction the application prints the survey analysis to the screen.
+
+* This displays the questions asked, together with the percentage of participants to opt for each potential answer to each question asked.
+
+<details><summary>Fig. 3.5.1 Survey Analysis Presentation Template</summary>
+<img src="documents/survey-analysis.png"
+alt="wireframe of the survey analysis presentation template"></details>
