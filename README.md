@@ -96,3 +96,13 @@ The following features could be added in time.
 2. All manor of additional analysis could be provided. For example, what percentage of people giving answer x to question y also gave answer a to question b etc. There are endless possibilities here and the analysis would likely need to be customised depending on the questions asked.
 
 3. It would also be possible to use the google sheet to carry out some of the analysis and then simply get the results from the appropriate worksheet rather than running large calculations in the background of the application itself.
+
+## 6. Color Scheme
+
+* Colorama has been used to add a simple color scheme to the text output.
+
+* Error Messages that result from invalid input entries are printed in red.
+
+* Otherwise a combination of green, blue, cyan, and the standard white text are used to contrast different elements of text so as to make the displayed output easier to read.
+
+
