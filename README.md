@@ -86,3 +86,13 @@ Based on the user stories and the features outlined above the flow chart below w
 
 #### Fig 4.1 Flow Chart
 ![flow chart outlining program logic](documents/pp3-flowchart.png "Flow Chart")
+
+## 5. Future Features
+
+The following features could be added in time.
+
+1. An additional option could be made available to the entity creating the survey to allow proposed survey questions and answers be entered via the application itself rather than the spreadsheet.
+
+2. All manor of additional analysis could be provided. For example, what percentage of people giving answer x to question y also gave answer a to question b etc. There are endless possibilities here and the analysis would likely need to be customised depending on the questions asked.
+
+3. It would also be possible to use the google sheet to carry out some of the analysis and then simply get the results from the appropriate worksheet rather than running large calculations in the background of the application itself.
