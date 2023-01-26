@@ -105,4 +105,19 @@ The following features could be added in time.
 
 * Otherwise a combination of green, blue, cyan, and the standard white text are used to contrast different elements of text so as to make the displayed output easier to read.
 
+## 7. Wireframes
 
+### 7.1 Survey Introduction and Survey Summary
+![wireframe of the initial introduction text and the survey summary if the option to complete survey is selected](documents/pp3-wframe-one.png "Survey Intro and Summary")
+
+### 7.2 Survey Questions 1 & 2
+![wireframe showing survey questions 1 and 2](documents/pp3-wframe-two.png "Survey Questions 1 and 2")
+
+### 7.3 Survey Questions 3 & 4
+![wireframe showing survey questions 3 and 4](documents/pp3-wframe-three.png "Survey Questions 3 and 4")
+
+### 7.4 Survey Questions 5, 6 and Thank You message.
+![wireframe showing survey questions 5 and 6 and the thank you message](documents/pp3-wframe-four.png "Survey Questions 5, 6 and the Thank you message")
+
+### 7.5 Survey Analysis Template
+![wireframe showing the survey analysis outline template](documents/pp3-wframe-five.png "Survey Analysis")
