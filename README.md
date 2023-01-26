@@ -1,31 +1,12 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Portfolio Project 3 - Electric Car Survey README
+## 1. Purpose of the project
 
-Welcome fenton1000,
+This project creates an application for the collection and recording of survey information relating to electric cars through a presentation of survey questions, a choice of answers, and input fields to enter the participants' chosen answers. The purpose of the survey is to gain insight into the participants' attitudes toward electric cars including the advantages and disadvantages they perceive regarding the technology. This information would be of use in a number of fields.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Firstly, it could be used in by those working in government and the public service to inform policy. For example, if a government has made the key decision to promote the purchasing of electric cars, the information collected may help identify the financial, educational, or other key points that would need to be addressed by such a public policy and its promotion.
 
-## Reminders
+Information gathered may also be of some use to those involved in the design and manufacture of electric cars. As an example, if it was determined that cost was a key factor, the industry could look at the manufacture of smaller, cheaper, car models.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Finally, the information could be useful in the advertising and sale of electric vehicles. For example, if vehicle range was an issue of concern, then advertising and promotion could focus in on the real world ranges now achieved by the cars and the actual real-world driving distances generally required by most drivers. The perceptions and the reality may not match and the advertising could address this, if this was found to be the case as a result of the survey.
 
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+In addition to the above, it should be noted that the application has been designed so that it is easy to reduce or extend the number of questions or change the questions and answers via the google sheet containing the data. Therefore, in addition to conducting this specific survey, this application can quiet easily be adapted to the rolling out of a survey on any topic via the editing of the google sheet containing the questions and possible answers.
