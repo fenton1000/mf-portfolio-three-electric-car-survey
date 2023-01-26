@@ -79,3 +79,10 @@ alt="wireframe of the survey conclusion"></details>
 <details><summary>Fig. 3.5.1 Survey Analysis Presentation Template</summary>
 <img src="documents/survey-analysis.png"
 alt="wireframe of the survey analysis presentation template"></details>
+
+## 4. Flow Chart
+
+Based on the user stories and the features outlined above the flow chart below was developed to outline the required program logic and so inform the code and function design. The flow chart was developed using Lucidchart https://www.lucidchart.com
+
+#### Fig 4.1 Flow Chart
+![flow chart outlining program logic](documents/pp3-flowchart.png "Flow Chart")
