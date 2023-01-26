@@ -162,7 +162,7 @@ The following technologies were used in developing and deploying the website:
 
    ### 10.1 via github
 
-1. The Code Institute python essentials project template was accessed on github at https://github.com/Code-Institute-Org/python-essentials-template and the Use this Template button clicked to create a project-specific repository.
+1. The Code Institute python essentials project template was accessed on github at https://github.com/Code-Institute-Org/python-essentials-template and the Use this Template button clicked was to create a project-specific repository.
 
 2. All files and documents pushed from Gitpod appear in the repository.
 
@@ -205,3 +205,25 @@ The site was developed in gitpod as follows:
 * Once deployed a button linking to the site is provided. When clicked it leads to the deployed application and the page address can be copied and provided as a link to the site/application.
 
 * The live site/application can be accessed <a href="https://mf-pp3-electric-car-survey.herokuapp.com/" target="_blank">here</a>
+
+## 11. Credits
+
+* Code Institute for the Gitpod python essentials template provided at https://github.com/Code-Institute-Org/python-essentials-template allowing easy set up of a repository and workspace as well as creating the mock terminal when deploying to Heroku.
+
+* Code Institute Love Sandwiches example project for general guidance as to minimun requirements and overview of approach and industry conventions. In particular for guidance on the process and code needed to connect this python application to a Google Sheet including using APIs from Google Cloud, adding python libraries to the workspace and importing libraries to run.py.
+
+* w3schools - www.w3schools.com for information on various python methods including the .split() method.
+
+* Code Institute Battleships Project and README example for minimun requirements.
+
+* edureka|Community at www.edureka.co for information on raise SystemExit().
+
+* geeksforgeeks.org for information on sum(), max() and index() functions.
+
+* gspread Documentation Release 5.7.0 by Anton Burnashev, Nov 13 2022 obtained from https://buildmedia.readthedocs.org for information on .update_cell()
+
+* Fellow students in the KCETB-Code Institute cohort for the feedback, advice, and, constant discussion of all things code.
+
+* Ms. Irene Neville, Code Institute cohort facilitator, for the provision of or signposting towards all key pieces of information needed to ensure the successful completion of the project to the required standards.
+
+* Mr. Rohit Sharma (Mentor) for guidance on overall project approach, industry standards and, README requirements. Also for specific signposting toward the colorama library and for advice on the use of "if __name__ == '__main__':" as good practice at the point of calling the main() function in run.py to check on file hierarchy.
