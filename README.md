@@ -121,3 +121,39 @@ The following features could be added in time.
 
 ### 7.5 Survey Analysis Template
 ![wireframe showing the survey analysis outline template](documents/pp3-wframe-five.png "Survey Analysis")
+
+## 8. Technology
+
+The following technologies were used in developing and deploying the website:
+
+* Python
+
+* Google Sheets
+
+* Google Drive
+
+* Google Cloud
+
+* Google Sheets API
+
+* Google Drive API
+
+* gspread Python library
+
+* google-auth Python library
+
+* colorama Python library
+
+* HTML, CSS and Javascript are included in the Code Institute Python Template used to aid deployment of this project to Heroku.
+
+* The IDE used was GITPOD
+
+* The repository used is GITHUB
+
+* The website is deployed on Heroku.
+
+* Balsamiq was used to prepare wireframes.
+
+* Lucidchart was used to prepare the logic flow chart.
+
+* Google Chrome was used as the main web browser both for accessing the IDE and the repository as well as to view the application on Heroku during development.
