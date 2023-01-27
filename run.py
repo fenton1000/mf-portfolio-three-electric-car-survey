@@ -74,17 +74,17 @@ def run_survey():
         print(' \n')
         ind += 1
         final_answer_index = len(question) - 1
-        answer_index = 2
+        ans_ind = 2
 
-        while answer_index <= final_answer_index:
-            answer_number = answer_index - 1
-            print(Fore.BLUE + f'Answer {answer_number}: {question[answer_index]}\n')
-            answer_index += 1
+        while ans_ind <= final_answer_index:
+            ans_num = ans_ind - 1
+            print(Fore.BLUE + f'Answer {ans_num}: {question[ans_ind]}\n')
+            ans_ind += 1
 
         while True:
             response = input('Please enter the number for your answer:\n')
             response_stripped = response.strip()
-            allowed_nums = range(1, answer_number + 1)
+            allowed_nums = range(1, ans_num + 1)
             allowed = [str(x) for x in allowed_nums]
 
             if validate_input(response_stripped, allowed):
@@ -121,7 +121,7 @@ def survey_welcome_choices(num):
     print(Fore.BLUE + 'Do you wish to continue?')
 
     while True:
-        choice = input(Fore.BLUE + 'Please enter Y for Yes or N for No here: Y/N\n')
+        choice = input(Fore.BLUE + 'Please enter Y for Yes or N for No Y/N:\n')
         choice_stripped = choice.strip()
 
         if validate_input(choice_stripped, ['Y', 'y', 'N', 'n']):
@@ -197,9 +197,10 @@ def analyze_data():
 
 def adjust_percentages(percentages):
     """
-    Takes a list of calcuated percentages, finds the rounding error that leads to
-    the list not adding to 100% and adds or subtracts this as appropriate
-    from the largest percentage in the list. Returns a list of the adjusted percentages.
+    Takes a list of calcuated percentages, finds the rounding error that
+    leads to the list not adding to 100% and adds or subtracts this as
+    appropriate from the largest percentage in the list.
+    Returns a list of the adjusted percentages.
     """
     total = sum(percentages)
     roundby = round(100 - total, 1)
@@ -249,14 +250,14 @@ def print_survey_analysis():
         ind += 1
 
         final_answer_index = len(question) - 1
-        answer_index = 2
+        ans_ind = 2
         stats_index = 0
 
-        while answer_index <= final_answer_index:
-            answer_number = answer_index - 1
+        while ans_ind <= final_answer_index:
+            ans_num = ans_ind - 1
             print(Fore.CYAN + f'{stats[stats_index]}% of people replied:')
-            print(Fore.BLUE + f'Answer {answer_number}: {question[answer_index]}\n')
-            answer_index += 1
+            print(Fore.BLUE + f'Answer {ans_num}: {question[ans_ind]}\n')
+            ans_ind += 1
             stats_index += 1
 
     print(Style.RESET_ALL + 'Data worksheet can be viewed at:')
