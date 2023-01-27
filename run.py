@@ -183,13 +183,9 @@ def analyze_data():
             percentages.append(percentage)
             answer += 1
 
-        total = sum(percentages)
-        roundby = round(100 - total, 1)
-        indmax = percentages.index(max(percentages))
-        replacement_val = round(percentages[indmax] + roundby, 1)
-        percentages[indmax] = replacement_val
+        adjusted_percentages = adjust_percentages(percentages)
         print(f'Saving updated Question {question_num} analysis....')
-        add_data_to_stats_worksheet(percentages, question_num)
+        add_data_to_stats_worksheet(adjusted_percentages, question_num)
 
         question_num += 1
 
@@ -197,6 +193,21 @@ def analyze_data():
     print('Data worksheet can be viewed at:')
     print('https://docs.google.com/spreadsheets/d/')
     print('1VFA4T7ZKYnuBS6kPLoo7TUDiPYoVGaTs0z5zoFnYQh0/edit?usp=sharing')
+
+
+def adjust_percentages(percentages):
+    """
+    Takes a list of calcuated percentages, finds the rounding error that leads to
+    the list not adding to 100% and adds or subtracts this as appropriate
+    from the largest percentage in the list. Returns a list of the adjusted percentages.
+    """
+    total = sum(percentages)
+    roundby = round(100 - total, 1)
+    indmax = percentages.index(max(percentages))
+    replacement_val = round(percentages[indmax] + roundby, 1)
+    percentages[indmax] = replacement_val
+
+    return percentages
 
 
 def add_data_to_stats_worksheet(data, col):
