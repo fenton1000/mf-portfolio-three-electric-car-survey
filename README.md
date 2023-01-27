@@ -172,6 +172,82 @@ The python code was tested using both the pylint command in the IDE terminal and
 
 ![Code Institute validation screenshot](documents/code-ins-python-linter.png "Code Institute validation screenshot")
 
+### 9.2 Test Cases
+
+ #### 9.2.1 User Story 1
+
+As a visiting user, I would like to be able to complete the Electric Car Survey.
+
+This requirement is met by the provision of an option in the opening message to complete the survey. Upon selecting this option the user is led through the process to complete a survey.
+
+This process has certain requirements tested as follows:
+
+Feature/Operation|Expect|Action|Result
+---|---|---|---
+Welcome Message|Welcome message to appear on start-up|Ran the program|Welcome message appeared
+Enter Invalid option|Warning message to appear and options to be presented again|Entered invalid entry 3|Warning message appeared and options were presented again
+Enter Invalid option|Warning message to appear and options to be presented again|Entered invalid entry fgrofgj|Warning message appeared and options were presented again
+Enter Option 1 to complete the survey|Survey Summary message to appear on screen|Entered 1|Survey Summary message appeared on screen including option to continue or exit
+Survey Summary shows the number of questions to be answered|Summary to say there are 6 questions|None - 6 questions previously entered to worksheet|Summary says there are 6 questions
+Enter Invalid option to continue yes/no|Warning message to appear and options to be presented again|Entered invalid entry 3|Warning message appeared and options were presented again
+Enter Invalid option to continue yes/no|Warning message to appear and options to be presented again|Entered invalid entry fgrofgj|Warning message appeared and options were presented again
+Enter N to continue yes/no|Confirmation message to appear and program to end|Entered n|Confirmation message appears and program ends
+Enter Y to continue yes/no|First question to appear on screen|Entered y|First question appeared on screen
+Enter Invalid answer option|Warning message to appear with chance to enter option again|Entered invalid entry 7|Warning message appeared with chance to enter option again
+Enter Invalid answer option|Warning message to appear with chance to enter option again|Entered invalid entry frgfergeta|Warning message appeared with chance to enter option again
+Enter a valid answer option|Question 2 to appear|Entered 1|Question 2 appeared
+For each subsequent question a valid answer is submitted|Next question to appear|Continued to enter valid answers|Next question appeared each time
+Enter valid answer to final question|User updates regarding background processing to appear followed by thank you message|Entered valid answer to final question|User updates regarding background processing appeared followed by thank you message
+Saving responses|The responses entered by the survey participant to be appended to the last row of the appropriate worksheet. (This is not visible to the user)|Entered answers as follows to each of the six questions: 2, 3, 1, 4, 5, 2|The responses entered are appended to the last row of the appropriate worksheet.(See fig. 9.2.1.7)
+
+<details><summary>Fig. 9.2.1.1 Welcome Message</summary>
+<img src="documents/welcome.png"
+alt="screenshot of welcome message"></details>
+
+<details><summary>Fig. 9.2.1.2 Invalid Message</summary>
+<img src="documents/opening-invalid.png"
+alt="screenshot of invalid entry message"></details>
+
+<details><summary>Fig. 9.2.1.3 Survey Summary Message</summary>
+<img src="documents/survey-summary-message.png"
+alt="screenshot of survey summary message"></details>
+
+<details><summary>Fig. 9.2.1.4 Survey Exit Message</summary>
+<img src="documents/survey-exit.png"
+alt="screenshot of survey exit message"></details>
+
+<details><summary>Fig. 9.2.1.5 First Question</summary>
+<img src="documents/first-question.png"
+alt="screenshot of survey first question"></details>
+
+<details><summary>Fig. 9.2.1.6 User Processing Updates and Thank You Message</summary>
+<img src="documents/survey-thank-you.png"
+alt="screenshot of survey processing updates being followed by a thank you message"></details>
+
+<details><summary>Fig. 9.2.1.7 Responses Worksheet</summary>
+<img src="documents/responses-worksheet.png"
+alt="screenshot of responses worksheet showing the last row matching data entered."></details>
+
+#### 9.2.2 User Story 2
+
+As a visiting user, I would like to be able to view a summary of the survey analysis to date.
+
+This requirement is met by the provision of an option in the opening message to view a summary of the survey analysis. Upon selecting this option the latest survey analysis is displayed to screen.
+
+This process has certain requirements tested as follows:
+
+Feature/Operation|Expect|Action|Result
+---|---|---|---
+Enter 2 to view summary of survey analysis|Summary of Survey Analysis to appear on screen|Entered 2 at the welcome message options|Summary of Survey Analysis appeared on screen.
+Survey Analysis|Survey data displayed to match stats worksheet (Worksheet not visible to the user)|Compare worksheet to screen data|Survey data displayed matches stats worksheet (See Fig 9.2.2.1 and Fig 9.2.2.2 for comparison of sheet and displayed Question 1 data as an example.)
+
+<details><summary>Fig. 9.2.2.1 Survey Analysis for Question 1</summary>
+<img src="documents/survey-analysis-q1.png"
+alt="screenshot of the survey analysis presented to screen for question 1"></details>
+
+<details><summary>Fig. 9.2.2.2 Stats Worksheet</summary>
+<img src="documents/stats-worksheet.png"
+alt="screenshot of the stats worksheet"></details>
 
 ## 10. Deployment
 
