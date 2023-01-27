@@ -158,6 +158,21 @@ The following technologies were used in developing and deploying the website:
 
 * Google Chrome was used as the main web browser both for accessing the IDE and the repository as well as to view the application on Heroku during development.
 
+## 9. Testing
+
+   ### 9.1 Code Validation
+
+The python code was tested using both the pylint command in the IDE terminal and the Code Institute Python Linter available at https://pep8ci.herokuapp.com/. The python code successfully passed validation:
+
+#### Fig 9.1.1 IDE Python Linter
+
+![IDE validation screenshot](documents/pylint.png "IDE validation screenshot")
+
+#### Fig 9.1.2 Code Institute Python Linter
+
+![Code Institute validation screenshot](documents/code-ins-python-linter.png "Code Institute validation screenshot")
+
+
 ## 10. Deployment
 
    ### 10.1 via github
