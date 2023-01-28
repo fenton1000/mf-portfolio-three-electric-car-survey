@@ -60,7 +60,7 @@ alt="wireframe of a sample survey question"></details>
 
 ### 3.4 Survey Conclusion
 
-* After the final question is answered the application saves the survey data and updates the overall survey analysis based on these most recent answers.
+* After the final question is answered the application saves the survey data to the responses worksheet and updates the overall survey analysis in the stats worksheet based on these most recent answers.
 
 * While this process is underway the user is presented with progress messages to keep them informed.
 
@@ -75,6 +75,8 @@ alt="wireframe of the survey conclusion"></details>
 * If option 2 is selected in the Survey Introduction the application prints the survey analysis to the screen.
 
 * This displays the questions asked, together with the percentage of participants to opt for each potential answer to each question asked.
+
+* This data is gathered by the application from both the questions worksheet and the stats worksheet.
 
 <details><summary>Fig. 3.5.1 Survey Analysis Presentation Template</summary>
 <img src="documents/survey-analysis.png"
@@ -107,7 +109,7 @@ The following features could be added in time.
 
 ## 7. Wireframes
 
-**NB. IT IS IMPORTANT TO NOTE HERE THAT THE WEBPAGE AND MOCK TERMINAL USED TO DEPLOY THIS PROJECT TO HEROKU WAS DEVELOPED BY CODE INSTITUTE AND PROVIDED FOR USE IN THIS PROJECT VIA THE CODE INSTITUTE GITPOD TEMPLATE AS DESCRIBED IN THE CREDITS SECTION BELOW. THEREFORE THE WIREFRAMES BELOW SHOULD NOT BE INTERPRETED AS SUGGESTING OTHERWISE. THIS README RELATES TO A COMMAND LINE PYTHON ONLY PROJECT. THE WIREFRAMES WERE DEVELOPED FOR THE SOLE PURPOSE OF DEVELOPING FURTHER, THE KEY _TEXT ELEMENTS_ REQUIRED TO MET THE DEVELOPED LOGIC FLOWCHART, PRIOR TO COMMENCEMENT OF CODING.**
+**NB. IT IS IMPORTANT TO NOTE HERE THAT THE WEBPAGE AND MOCK TERMINAL USED TO DEPLOY THIS PROJECT TO HEROKU WAS DEVELOPED BY CODE INSTITUTE AND PROVIDED FOR USE IN THIS PROJECT VIA THE CODE INSTITUTE PYTHON ESSENTIALS TEMPLATE AS DESCRIBED IN THE CREDITS SECTION BELOW. THEREFORE THE WIREFRAMES BELOW SHOULD NOT BE INTERPRETED AS SUGGESTING OTHERWISE. THIS README RELATES TO A COMMAND LINE PYTHON ONLY PROJECT. THE WIREFRAMES WERE DEVELOPED FOR THE SOLE PURPOSE OF DEVELOPING FURTHER, THE KEY _TEXT ELEMENTS_ REQUIRED TO MEET THE DEVELOPED LOGIC FLOWCHART, PRIOR TO COMMENCEMENT OF CODING.**
 
 ### 7.1 Survey Introduction and Survey Summary
 ![wireframe of the initial introduction text and the survey summary if the option to complete survey is selected](documents/pp3-wframe-one.png "Survey Intro and Summary")
@@ -265,11 +267,11 @@ Solution: The # symbol has been added to the question text in the worksheet at s
 
    ### 10.1 via github
 
-1. The Code Institute python essentials project template was accessed on github at https://github.com/Code-Institute-Org/python-essentials-template and the Use this Template button clicked was to create a project-specific repository.
+1. The Code Institute python essentials project template was accessed on github at https://github.com/Code-Institute-Org/python-essentials-template and the Use this Template button clicked to create a project-specific repository.
 
 2. All files and documents pushed from Gitpod appear in the repository.
 
-   ### 10.2 via gitpod
+### 10.2 via gitpod
 
 The site was developed in gitpod as follows:
 
@@ -281,7 +283,7 @@ The site was developed in gitpod as follows:
 
 4. The git push command was used to push all committed code and documentation to the repository for secure storage.
 
-   ### 10.3 via Heroku
+### 10.3 via Heroku
 
 * The application is deployed to Heroku in the form of a web page with a mock terminal interface. This page is created by code in the python essentials template provided by Code Institute.
 
@@ -311,7 +313,7 @@ The site was developed in gitpod as follows:
 
 ## 11. Credits
 
-* Code Institute for the Gitpod python essentials template provided at https://github.com/Code-Institute-Org/python-essentials-template allowing easy set up of a repository and workspace as well as creating the mock terminal when deploying to Heroku.
+* Code Institute for the python essentials template provided at https://github.com/Code-Institute-Org/python-essentials-template allowing easy set up of a repository and workspace as well as creating the mock terminal when deploying to Heroku.
 
 * Code Institute Love Sandwiches example project for general guidance as to minimun requirements and overview of approach and industry conventions. In particular for guidance on the process and code needed to connect this python application to a Google Sheet including using APIs from Google Cloud, adding python libraries to the workspace and importing libraries to run.py.
 
