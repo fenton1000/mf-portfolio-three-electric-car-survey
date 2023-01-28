@@ -59,23 +59,23 @@ def run_survey():
     """
     number_of_questions = get_number_of_questions()
     survey_welcome_choices(number_of_questions)
-    ind = 1
+    question_num = 1
     responses = []
 
-    while ind <= number_of_questions:
-        question = get_question(ind)
+    while question_num <= number_of_questions:
+        question = get_question(question_num)
         display_question_format = question[1].split('#')
         last_index = len(display_question_format) - 1
         part = 0
 
-        print(Fore.GREEN + f'\nQuestion {ind}:')
+        print(Fore.GREEN + f'\nQuestion {question_num}:')
 
         while part <= last_index:
             print(display_question_format[part])
             part += 1
 
         print(' \n')
-        ind += 1
+        question_num += 1
         final_answer_index = len(question) - 1
         ans_ind = 2
 
@@ -237,20 +237,20 @@ def print_survey_analysis():
     print(Style.RESET_ALL + 'Retrieving survey analysis....\n')
     number_of_questions = get_number_of_questions()
     print(Fore.BLUE + 'When asked the following questions:\n')
-    ind = 1
-    while ind <= number_of_questions:
-        question = get_question(ind)
-        stats = get_stats(ind)
+    question_num = 1
+    while question_num <= number_of_questions:
+        question = get_question(question_num)
+        stats = get_stats(question_num)
         display_question_format = question[1].split('#')
         last_index = len(display_question_format) - 1
         part = 0
-        print(Fore.GREEN + f'Question {ind}:')
+        print(Fore.GREEN + f'Question {question_num}:')
         while part <= last_index:
             print(display_question_format[part])
             part += 1
 
         print(' \n')
-        ind += 1
+        question_num += 1
 
         final_answer_index = len(question) - 1
         ans_ind = 2
