@@ -249,6 +249,16 @@ alt="screenshot of the survey analysis presented to screen for question 1"></det
 <img src="documents/stats-worksheet.png"
 alt="screenshot of the stats worksheet"></details>
 
+### 9.3 Fixed Bugs
+
+1. Initially when percentages were calculated for each answer to a particular question, the total did not always add to 100% due to rounding errors.
+
+Solution: An additonal function was added to take the list of percentages to a particular answer, find the total and subtract it from 100 to find the rounding error. The largest percentage in the list is then adjusted by the amount of the error and the full adjusted list returned to use for updating the stats worksheet.
+
+2. When questions were imported from the worksheet the question length was too long for neat display in the terminal. While the text could wrap to the next line this could happen in the middle of a word.
+
+Solution: The # symbol has been added to the question text in the worksheet at suitable locations where the question text string should be split. This allows for easy entry and formatting of questions added to the worksheet. Additional code was added to run.py, using the split() method to divide the imported question string into separate parts at the specified locations. A loop was added to print each of these parts in turn.
+
 ## 10. Deployment
 
    ### 10.1 via github
